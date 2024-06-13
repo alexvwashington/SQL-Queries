@@ -32,7 +32,29 @@ Orders.CustomerID = Customers.CustomerID
 
 **This result has 944 rows.**
 
-### 3. Customer name & phone number for all customers who ordered clothing. (excluding duplicates)
+### 3. Customers and employees with the same first name.
+
+````sql
+select * from Customers, Employees
+where Customers.CustFirstName = Employees.EmpFirstName
+````
+
+**Answer:**
+
+![image](https://github.com/alexvwashington/SQL-Queries/assets/165182969/bbd70c44-f521-4102-ab42-689628abd64d)
+
+### 4. Customers and employees who live in cities that begin with the letter 'S'.
+
+````sql
+select * from Customers, Employees
+where Customers.CustCity like 's%' and Employees.EmpCity like 's%'
+````
+
+**Answer:**
+
+![image](https://github.com/alexvwashington/SQL-Queries/assets/165182969/27cfbf6c-d4e8-4b9d-a36d-3a123a9c5f94)
+
+### 5. Customer name & phone number for all customers who ordered clothing. (excluding duplicates)
 
 ````sql
 select distinct Customers.CustFirstName, Customers.CustLastName, Customers.CustPhoneNumber from Customers
@@ -49,7 +71,7 @@ where Products.CategoryID = 3
 
 **This result has 27 rows.**
 
-### 4. Employee names for employees who have sold accessories.
+### 6. Employee names for employees who have sold accessories.
 
 ````sql
 select distinct Employees.EmpFirstName, Employees.EmpLastName from Employees
