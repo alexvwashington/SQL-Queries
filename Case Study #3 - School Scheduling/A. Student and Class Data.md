@@ -5,17 +5,28 @@
 ### 1. List of students and classes they are currently enrolled in.
 
 ````sql
-
+select * from Students, Classes
+inner join Student_Schedules on StudentID = Student_Schedules.StudentID
+and Classes.ClassID = Student_Schedules.ClassID
+where Student_Schedules.ClassStatus = 1
 ````
 **Answer:**
+
+![image](https://github.com/alexvwashington/SQL-Queries/assets/165182969/2b5b1554-05c2-4f07-8266-44dd680b18d6)
+
+**This query has 900 rows.**
 
 ### 2. List of student names and ages for all students enrolled in an Information Science degree. (descending order by age)
 
 ````sql
-
+select StudFirstName, StudLastName, DATEDIFF(YY, StudBirthDate, GETDATE()) as 'age' from Students
+where StudMajor = 4
+order by age desc
 ````
 
 **Answer:**
+
+![image](https://github.com/alexvwashington/SQL-Queries/assets/165182969/b0f46679-5c13-4e11-80c6-6ca05e11cf84)
 
 ### 3. List of student names enrolled in a class that begins at 11 am. (last name in alphabetical order)
 
@@ -48,7 +59,14 @@ where Student_Schedules.ClassStatus = 1 and Class_Rooms.Capacity < 80
 ### 5. Class IDs for all classes are assigned to classrooms in buildings with three floors.
 
 ````sql
-
+select ClassID from Classes
+inner join Class_Rooms on Classes.ClassRoomID = Class_Rooms.ClassRoomID
+inner join Buildings on Class_Rooms.BuildingCode = Buildings.BuildingCode
+where Buildings.NumberOfFloors = 3
 ````
 
 **Answer:**
+
+![image](https://github.com/alexvwashington/SQL-Queries/assets/165182969/fdedb877-fbe5-4e62-9b58-d86186dd246a)
+
+**This query has 112 rows.**
