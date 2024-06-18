@@ -4,40 +4,38 @@
 
 ### 1. Description
 
-''''sql
+````sql
 
-''''
-
+````
 **Answer:**
 
 ### 2. Description
 
-''''sql
+````sql
 
-''''
-
+````
 **Answer:**
 
 ### 3. Description
 
-''''sql
+````sql
 
-''''
+````
 
 **Answer:**
 
 ### 4. Description
 
-''''sql
+````sql
 
-''''
+````
 
 **Answer:**
 
 ### 5. Description
 
-''''sql
+````sql
 
-''''
+````
 
 **Answer:**
